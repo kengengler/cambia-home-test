@@ -27,6 +27,9 @@ public class Main {
                 .stream()
                 .map(DescendingSortedStrings::new)
                 .forEach(writer::write);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            System.exit(-1);
         }
     }
 

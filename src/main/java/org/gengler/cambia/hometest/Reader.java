@@ -2,10 +2,7 @@ package org.gengler.cambia.hometest;
 
 import com.opencsv.CSVReader;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
@@ -27,6 +24,9 @@ public class Reader implements AutoCloseable {
     }
 
     public Reader(final String fileName) {
+        if (! (new File(fileName)).exists())
+            throw new RuntimeException("Input file does not exist: " + fileName);
+
         try {
             csvReader = new CSVReader(new BufferedReader(new FileReader(fileName)));
         } catch (FileNotFoundException e) {
