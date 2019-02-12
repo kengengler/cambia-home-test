@@ -1,4 +1,4 @@
-package org.gengler.cambia.hometest;
+package org.gengler.codingchallenge3;
 
 import com.opencsv.CSVReader;
 

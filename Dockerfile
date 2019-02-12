@@ -10,6 +10,6 @@ RUN mvn package
 FROM openjdk:8-jre-alpine
 ARG INPUT=input1
 WORKDIR /tmp/
-COPY --from=MAVEN_TOOL_CHAIN /tmp/target/cambia-home-test-0.1.jar cambia-home-test-0.1.jar
+COPY --from=MAVEN_TOOL_CHAIN /tmp/target/codingchallenge3-0.1.jar codingchallenge3-0.1.jar
 COPY samples/${INPUT}.csv input.csv
-RUN java -jar cambia-home-test-0.1.jar
+RUN java -jar codingchallenge3-0.1.jar
